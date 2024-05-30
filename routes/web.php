@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\EmployeeController;
 
-
-
-
 Route::get('employees', [app\Http\employeemanagement::class, 'index']);
 
 Route::get('/', function () {
@@ -30,9 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::middleware('auth')->group(function () {
     Route::view('about', 'about')->name('about');
-
-  
-
+    
     Route::get('employee', [\App\Http\Controllers\employeemanagement::class, 'index'])->name('employee.index');
     Route::get('employee\show', [\App\Http\Controllers\employeemanagement::class, 'show'])->name('employee.show');
     

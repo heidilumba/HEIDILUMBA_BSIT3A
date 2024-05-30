@@ -12,7 +12,6 @@ class employeemanagement extends Controller
         return view('employee.index');
     }
 
-
     public function store(Request $request)
     {
        $employ= [
@@ -27,14 +26,11 @@ class employeemanagement extends Controller
        return redirect('employee');
     }
 
-
     public function show(){
         $employ = employee::get();
         return view('employee.show', compact('employ'));
     }
-    
-
-    
+        
     public function change(int $id){
         $tchange = employee::find($id);
        ;
@@ -49,9 +45,7 @@ class employeemanagement extends Controller
             'phone'=>$request->phone,
 
         ]);
-        return redirect()->back();
-
-   
+        return redirect()->back();  
 }
 
 }
